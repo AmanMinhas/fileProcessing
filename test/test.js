@@ -7,7 +7,7 @@ var mode2 = oModes.mode2;
 describe('Modes', function() {
 
 	describe('#mode1()',function() {
-			
+
 		it('it should only include words starting with vowels', function() {
 			var arrTest = ["abc","xyz","unicorn"];
 			var arrResult = mode1(arrTest);
@@ -24,6 +24,12 @@ describe('Modes', function() {
 			var arrTest = ["aabc","aacb"];
 			var arrResult = mode1(arrTest);
 			expect(arrResult).to.eql(["aabc","aacb"]);
+		});
+
+		it('it should discard duplicates', function() {
+			var arrTest = ["abc","abc"];
+			var arrResult = mode1(arrTest);
+			expect(arrResult).to.eql(["abc"]);
 		})
 	});
 
